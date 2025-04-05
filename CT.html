@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions Trophy Tickets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+        }
+        input, select {
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .filters {
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .matches {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .match-card {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+        .match-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Champions Trophy Ticket Booking</h1>
+        <input type="text" placeholder="Search for matches...">
+    </header>
+    <section class="filters">
+        <h2>Filters</h2>
+        <label for="match-date">Select Date:</label>
+        <input type="date" id="match-date">
+        <label>Price Range:</label>
+        <input type="range" min="500" max="5000">
+    </section>
+    <section class="matches">
+        <div class="match-card">
+            <img src="match2.jpg" alt="Match">
+            <p><strong>India vs Pakistan</strong></p>
+            <p>23rd Feb,Sun, Abudabi Stadium, Dubai</p>
+            <p>₹ 999 onwards</p>
+            <button>Book Now</button>
+        </div>
+        <div class="match-card">
+            <img src="match4.jpg" alt="Match">
+            <p><strong>Newzealand vs South Africa</strong></p>
+            <p>5 Mar, Wed,Gaddafi Stadium, Lahore</p>
+            <p>₹ 999 onwards</p>
+            <button>Book Now</button>
+        </div>
+<div class="match-card">
+            <img src="match1.jpg" alt="Match">
+            <p><strong>India vs Australia</strong></p>
+            <p>04 Mar, Tue,Abudabi Stadium, Dubai</p>
+            <p>₹ 999 onwards</p>
+            <button>Book Now</button>
+        </div>
+<div class="match-card">
+            <img src="match3.jpg" alt="Match">
+            <p><strong>India vs Newzealand</strong></p>
+            <p>09 Mar, Sun, Abudabi Stadium, Dubai</p>
+            <p>₹ 999 onwards</p>
+            <button>Book Now</button>
+        </div>
+
+    </section>
+</body>
+</html>

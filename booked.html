@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booked Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .ticket {
+            border: 2px solid #333;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h2>Booked Ticket</h2>
+    <div class="ticket" id="ticket">
+        <h3>Booked Ticket Details</h3>
+        <p><strong>Name:</strong> <span id="ticketName"></span></p>
+        <p><strong>Date:</strong> <span id="ticketDate"></span></p>
+    </div>
+
+    <script>
+        // Function to load booked ticket details from localStorage
+        function loadBookedTicket() {
+            let name = localStorage.getItem("ticketName"India vs Pakistan);
+            let date = localStorage.getItem("ticketDate"23rd feb);
+            
+            if (name && eventTitle && date) {
+                document.getElementById("ticketName").textContent = name;
+                document.getElementById("ticketDate").textContent = date;
+                
+                document.getElementById("ticket").style.display = "block";
+            } else {
+                document.body.innerHTML += "<p>No booked ticket found.</p>";
+            }
+        }
+        
+        window.onload = loadBookedTicket;
+    </script>
+</body>
+</html>

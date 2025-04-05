@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.banner {
+    text-align: center;
+    background: url('banner.jpg') no-repeat center center/cover;
+    color: Black;
+    padding: 150px 120px;
+}
+
+#matches {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+.match {
+    background: lightblue;
+    padding: 15px;
+    margin: 15px auto;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.match img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.match button {
+    background-color: limegreen;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}

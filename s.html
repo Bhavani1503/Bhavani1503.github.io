@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Events - Chennai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background: white;
+            padding: 15px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .search-bar {
+            width: 40%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .user-menu {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .user-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 250px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+        .user-dropdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .user-dropdown ul li {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            margin-top: 20px;
+        }
+        .sidebar {
+            width: 20%;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .filter-buttons button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            cursor: pointer;
+            background: Blue;
+            border-radius: 5px;
+        }
+        .date-picker {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .content {
+            width: 75%;
+            margin-left: 5%;
+        }
+        .event-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .event {
+            background: white;
+            padding: 15px;
+            width: 22%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .event img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>BookMyShow</h2>
+        <input type="text" class="search-bar" placeholder="Search for Matches">
+        <div class="user-menu" onclick="toggleDropdown()">
+            <span>Hi, Guest ▼</span>
+            <div class="user-dropdown" id="userDropdown">
+                <ul>
+                    <li>Edit Profile</li>
+                    <li>Get Tickets on WhatsApp/SMS</li>
+                    <li>Notifications</li>
+                    <li>Your Orders</li>
+                    <li>Help & Support</li>
+                    <li>Sign Out</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>Filters</h3>
+            <div class="filter-buttons">
+                <button>Today</button>
+                <button>Tomorrow</button>
+                <button>This Weekend</button>
+            </div>
+            <input type="text" id="datePicker" class="date-picker" placeholder="Select Date Range">
+        </div>
+        <div class="content">
+            <h1>Cricket Matches in Chennai</h1>
+            <div class="event-list">
+                <div class="event">
+                    <img src="https://via.placeholder.com/200" alt="CSK vs RR">
+                    <h2>Rajasthan Royals vs Chennai Super Kings</h2>
+                    <p>Date: Sun, 30 Mar</p>
+                    <p>Venue: ACA Stadium, Guwahati</p>
+                    <p>₹4300 onwards</p>
+                    <button>Book Now</button>
+                </div>
+
+                <div class="event">
+                    <img src="https://via.placeholder.com/200" alt="MI vs SRH">
+                    <h2>Mumbai Indians vs Sunrisers Hyderabad</h2>
+                    <p>Date: Thu, 17 Apr</p>
+                    <p>Venue: Wankhede Stadium</p>
+                    <p>₹999 onwards</p>
+                    <button>Book Now</button>
+                </div>
+
+                <div class="event">
+                    <img src="https://via.placeholder.com/200" alt="MI vs KKR">
+                    <h2>Mumbai Indians vs Kolkata Knight Riders</h2>
+                    <p>Date: Mon, 31 Mar</p>
+                    <p>Venue: Wankhede Stadium</p>
+                    <p>₹999 onwards</p>
+                    <button>Book Now</button>
+                </div>
+
+                <div class="event">
+                    <img src="https://via.placeholder.com/200" alt="LSG vs PBKS">
+                    <h2>Lucknow Super Giants vs Punjab Kings</h2>
+                    <p>Date: Tue, 1 Apr</p>
+                    <p>Venue: BRSABV Ekana Cricket Stadium</p>
+                    <p>₹499 onwards</p>
+                    <button>Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("userDropdown");
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
+
+        document.addEventListener("click", function(event) {
+            var dropdown = document.getElementById("userDropdown");
+            var userMenu = document.querySelector(".user-menu");
+
+            if (!userMenu.contains(event.target)) {
+                dropdown.style.display = "none";
+            }
+        });
+
+        flatpickr("#datePicker", {
+            mode: "range",
+            dateFormat: "M d, Y",
+            minDate: "today"
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions Trophy Tickets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+        }
+        input, select {
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .filters, .booking-form {
+            background: white;
+            padding: 20px;
+            margin: 10px auto;
+            border-radius: 5px;
+            width: 50%;
+            display: none;
+        }
+        .matches {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .match-card {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+        .match-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Indian Premiere League Booking</h1>
+        <input type="text" placeholder="Search for matches...">
+    </header>
+    <section class="matches">
+        <div class="match-card" data-match="India vs Pakistans">
+            <img src="match2.jpg" alt="Match">
+            <p><strong>India vs Pakistan</strong></p>
+            <p>23rd Feb,Sun, Abudabi Stadium, Dubai</p>
+            <p>₹ 999 onwards</p>
+            <button onclick="bookTicket(this)">Book Now</button>
+        </div>
+        <div class="match-card" data-match="Newzealand vs South Africa">
+            <img src="match4.jpg" alt="Match">
+            <p><strong>Newzealand vs South Africa</strong></p>
+            <p>5 Mar, Wed,Gaddafi Stadium, Lahore</p>
+            <p>₹ 999 onwards</p>
+            <button onclick="bookTicket(this)">Book Now</button>
+        </div>
+         <div class="match-card" data-match="India vs Australia">
+            <img src="match1.jpg" alt="Match">
+            <p><strong>India vs Australia</strong></p>
+            <p>04 Mar, Tue,Abudabi Stadium, Dubai</p>
+            <p>₹ 999 onwards</p>
+            <button onclick="bookTicket(this)">Book Now</button>
+        </div>
+         <div class="match-card" data-match="Mumbai Indians vs Sunrisers Hyderabad">
+             <img src="match3.jpg" alt="Match">
+            <p><strong>India vs Newzealand</strong></p>
+            <p>09 Mar, Sun, Abudabi Stadium, Dubai</p>
+            <p>₹ 999 onwards</p>
+            <button onclick="bookTicket(this)">Book Now</button>
+        </div>
+
+    </section>
+
+    <section class="booking-form" id="booking-form">
+        <h2>Book Your Ticket</h2>
+        <p id="selected-match"></p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <label for="tickets">Number of Tickets:</label>
+        <input type="number" id="tickets" min="1" max="10" required>
+        <button onclick="confirmBooking()">Confirm Booking</button>
+    </section>
+
+    <script>
+        function bookTicket(button) {
+            let matchCard = button.parentElement;
+            let matchName = matchCard.getAttribute("data-match");
+            document.getElementById("selected-match").innerText = "Booking for: " + matchName;
+            document.getElementById("booking-form").style.display = "block";
+        }
+
+        function confirmBooking() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let tickets = document.getElementById("tickets").value;
+            if (name && email && tickets) {
+                alert("Thank you " + name + "! Your booking for " + tickets + " ticket(s) is confirmed.");
+                document.getElementById("booking-form").style.display = "none";
+            } else {
+                alert("Please fill all details.");
+            }
+        }
+    </script>
+</body>
+</html>

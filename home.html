@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0288d1;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .container {
+            margin: 20px;
+        }
+        .match-list {
+            margin-top: 20px;
+        }
+        .match {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 250px;
+            background-color: #f9f9f9;
+        }
+        .book-btn {
+            background-color: #0288d1;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .book-btn:hover {
+            background-color: #02669b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Cricket Ticket Booking
+    </header>
+    <div class="container">
+        <h2>Upcoming Matches</h2>
+        <div class="match-list" id="matchList">
+            <div class="match">
+                <h3>India vs Australia</h3>
+                <p>Date: 25th March 2025</p>
+                <button class="book-btn" onclick="bookTicket('India vs Australia', '25th March 2025')">Book Now</button>
+            </div>
+            <div class="match">
+                <h3>England vs Pakistan</h3>
+                <p>Date: 30th March 2025</p>
+                <button class="book-btn" onclick="bookTicket('England vs Pakistan', '30th March 2025')">Book Now</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function bookTicket(match, date) {
+            localStorage.setItem("ticketEvent", match);
+            localStorage.setItem("ticketDate", date);
+            alert("Ticket booked for " + match + " on " + date);
+            window.location.href = "ticket.html"; // Redirect to the booked ticket page
+        }
+    </script>
+</body>
+</html>
